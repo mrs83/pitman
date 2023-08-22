@@ -201,14 +201,6 @@ dev = ["pre-commit", "tox"]
 testing = ["pytest", "pytest-benchmark"]
 
 [[package]]
-name = "py"
-version = "1.11.0"
-description = "library with cross-python path, ini-parsing, io, code, log facilities"
-category = "dev"
-optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-
-[[package]]
 name = "pycodestyle"
 version = "2.11.0"
 description = "Python style guide checker"
@@ -357,7 +349,7 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "49aafedfb7521c67e15154bf3cc5b2a15fb15238ab1afe598f4cdb82cfa5974a"
+content-hash = "69f71c26c5a4d7383245809ed060a4c9c6ae6a1dad1f22f686fcb00f908dc3e1"
 
 [metadata.files]
 cached-property = []
@@ -380,7 +372,6 @@ nltk = []
 packaging = []
 pathspec = []
 pluggy = []
-py = []
 pycodestyle = []
 pyflakes = []
 pytest = []
