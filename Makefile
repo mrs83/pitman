@@ -1,16 +1,14 @@
-.PHONY: test install pep8 release clean
+.PHONY: test install release clean
 
-test: pep8
-	py.test -l --tb=short --maxfail=1
+test:
+	@poetry run pytest
 
 install:
-	python setup.py develop
+	@poetry install
 
-pep8:
-	@flake8 program --ignore=F403 --exclude=junk
 
 release: test
-	@python setup.py sdist bdist_wheel upload
+	@poetry build
 
 clean:
 	@find ./ -name '*.pyc' -exec rm -f {} \;
