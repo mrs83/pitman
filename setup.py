@@ -8,32 +8,32 @@ requires = []  # for package names
 
 # new versions of pip requires a session
 requirements = pip.req.parse_requirements(
-    'requirements.txt', session=pip.download.PipSession()
+    "requirements.txt", session=pip.download.PipSession()
 )
 
 for item in requirements:
-    if getattr(item, 'url', None):  # older pip has url
+    if getattr(item, "url", None):  # older pip has url
         links.append(str(item.url))
-    if getattr(item, 'link', None):  # newer pip has link
+    if getattr(item, "link", None):  # newer pip has link
         links.append(str(item.link))
     if item.req:
-        requires.append(str(item.req))  # always the package name 
+        requires.append(str(item.req))  # always the package name
 
 
-DESCRIPTION = ("Pitman is a small Python 3 library to extract text data from urls.")
-LONG_DESCRIPTION = open('README.md').read()
+DESCRIPTION = "Pitman is a small Python 3 library to extract text data from urls."
+LONG_DESCRIPTION = open("README.md").read()
 VERSION = "0.1"
 
 
 setup(
-    name='pitman',
+    name="pitman",
     version=VERSION,
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
-    author='Massimo Scamarcia',
-    author_email='massimo.scamarcia@gmail.com',
-    url='http://github.com/mscam/pitman',
-    license=open('LICENSE').read(),
+    author="Massimo Scamarcia",
+    author_email="massimo.scamarcia@gmail.com",
+    url="http://github.com/mscam/pitman",
+    license=open("LICENSE").read(),
     platforms=["any"],
     packages=find_packages(),
     install_requires=requires,
@@ -41,21 +41,17 @@ setup(
     include_package_data=True,
     test_suite="pitman.tests",
     classifiers=[
-        'Development Status :: 4 - Beta',
-        'Environment :: Web Environment',
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
-        'Operating System :: OS Independent',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-        'Topic :: Software Development',
+        "Development Status :: 4 - Beta",
+        "Environment :: Web Environment",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.3",
+        "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.5",
+        "Topic :: Software Development",
     ],
-    entry_points={
-        'console_scripts': [
-            'pitman = pitman.__main__:main'
-        ]
-    }
+    entry_points={"console_scripts": ["pitman = pitman.__main__:main"]},
 )

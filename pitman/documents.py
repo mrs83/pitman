@@ -11,43 +11,43 @@ class Document:
 
     @staticmethod
     def load(input):
-        if input.startswith('http'):
+        if input.startswith("http"):
             url = url_normalize(input)
             data = process_url(input, verify_ssl=PITMAN_VERIFY_SSL)
         else:
             url = None
             data = process_html(input)
-        data['url'] = url
+        data["url"] = url
         return data
 
     @classmethod
     def from_file(cls, input_file):
-        if hasattr(input_file, 'read'):
+        if hasattr(input_file, "read"):
             input = input_file.read()
         else:
-            with open(input_file, 'r') as fd:
+            with open(input_file, "r") as fd:
                 input = fd.read()
         return cls(input)
 
     def _get_url(self):
-        return self._data.get('url', '')
+        return self._data.get("url", "")
 
     def _set_url(self, value):
-        self._data['url'] = url_normalize(value)
+        self._data["url"] = url_normalize(value)
 
     url = property(_get_url, _set_url)
 
     @property
     def title(self):
-        return self._data.get('title', '')
+        return self._data.get("title", "")
 
     @property
     def short_title(self):
-        return self._data.get('short_title', '')
+        return self._data.get("short_title", "")
 
     @property
     def summary(self):
-        return self._data.get('summary', '')
+        return self._data.get("summary", "")
 
     @cached_property
     def blob(self):
