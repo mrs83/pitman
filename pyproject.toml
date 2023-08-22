@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pitman"
-version = "0.1.0"
+version = "0.1.1"
 description = "Simple utility to extract text data from URLs, including translation, noun phrase extraction, translation, etc. using requests, TextBlob and readability-lxml."
 authors = ["Massimo Scamarcia <massimo.scamarcia@gmail.com>"]
 license = "MIT"
